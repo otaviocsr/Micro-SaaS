@@ -35,7 +35,7 @@ export function AuthForm() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" placeholder="m@example.com" required type="email" {...form.register('email')} />
+          <Input id="email" placeholder="email@example.com" required type="email" {...form.register('email')} />
         </div>
         <Button className="w-full" type="submit">
           Send Magic Link

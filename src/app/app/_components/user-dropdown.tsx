@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,21 +8,23 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu";
 import {
+  ExitIcon,
+  GearIcon,
   LockClosedIcon,
   MixerVerticalIcon,
   RocketIcon,
-} from '@radix-ui/react-icons'
-import { Session } from 'next-auth'
-import { signOut } from 'next-auth/react'
+} from "@radix-ui/react-icons";
+import { Session } from "next-auth";
+import { signOut } from "next-auth/react";
 
 type UserDropdownProps = {
-  user: Session['user']
-}
+  user: Session["user"];
+};
 
 export function UserDropdown({ user }: UserDropdownProps) {
-  if (!user) return
+  if (!user) return;
 
   return (
     <DropdownMenu>
@@ -58,7 +60,7 @@ export function UserDropdown({ user }: UserDropdownProps) {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            <MixerVerticalIcon className="w-3 h-3 mr-3" />
+            <GearIcon className="w-3 h-3 mr-3" />
             Configuraçoes
           </DropdownMenuItem>
           <DropdownMenuItem>
@@ -68,10 +70,10 @@ export function UserDropdown({ user }: UserDropdownProps) {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
-          <LockClosedIcon className="w-3 h-3 mr-3" />
+          <ExitIcon className="w-3 h-3 mr-3" />
           Log out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }
