@@ -7,7 +7,7 @@ import {
   DashboardSidebarMain,
   DashboardSidebarNav,
   DashboardSidebarNavLink,
-  DashboardSidebarNavMain
+  DashboardSidebarNavMain,
 } from "@/components/dashboard/sidebar";
 import { Logo } from "@/components/logo";
 import { GearIcon, HomeIcon } from "@radix-ui/react-icons";
@@ -29,7 +29,9 @@ export function MainSidebar({ user }: MainSidebarProps) {
   return (
     <DashboardSidebar>
       <DashboardSidebarHeader>
-        <Logo/>
+        <a href="http://localhost:3000">
+          <Logo/>
+        </a>
       </DashboardSidebarHeader>
       <DashboardSidebarMain className="flex flex-col flex-grow">
         <DashboardSidebarNav>
