@@ -8,8 +8,11 @@ import {
 export default function Page() {
   return (
     <DashboardPage>
+      <DashboardPageHeader>
+        <DashboardPageHeaderTitle>Settings</DashboardPageHeaderTitle>
+      </DashboardPageHeader>
       <DashboardPageMain>
-        <h1>Configurações</h1>
+        <h1>Settings</h1>
       </DashboardPageMain>
     </DashboardPage>
   )

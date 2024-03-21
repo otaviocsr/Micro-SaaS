@@ -10,12 +10,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
-  ExitIcon,
-  GearIcon,
-  LockClosedIcon,
-  MixerVerticalIcon,
-  RocketIcon,
-} from "@radix-ui/react-icons";
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
+import { ExitIcon, GearIcon, RocketIcon } from "@radix-ui/react-icons";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 
@@ -61,7 +60,7 @@ export function UserDropdown({ user }: UserDropdownProps) {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <GearIcon className="w-3 h-3 mr-3" />
-            Configuraçoes
+            Configurações
           </DropdownMenuItem>
           <DropdownMenuItem>
             <RocketIcon className="w-3 h-3 mr-3" />

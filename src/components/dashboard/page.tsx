@@ -17,7 +17,7 @@ export function DashboardPageHeader({
   children,
 }: DashboardPageGenericProps) {
   return (
-    <header className={cn(['px-6 py-3 border-b border-border', className])}>
+    <header className={cn(['px-6 py-3 border-b border-border flex items-center justify-between', className])}>
       {children}
     </header>
   )
@@ -29,7 +29,7 @@ export function DashboardPageHeaderTitle({
 }: DashboardPageGenericProps) {
   return (
     <span
-      className={cn(['text-sm text-muted-foreground uppercase', className])}
+      className={cn(['text-sm text-muted-foreground', className])}
     >
       {children}
     </span>

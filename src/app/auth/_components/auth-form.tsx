@@ -12,16 +12,16 @@ export function AuthForm() {
 
   const handleSubmit = form.handleSubmit(async (data) => {
     try {
-      await signIn('email', { email: data.email, redirect: false })
+      await signIn('nodemailer', { email: data.email, redirect: false })
       
       toast({
-        title: 'Magic Link Sent',
-        description: 'Check your email for the magic link to login'
+        title: 'Link Mágico Enviado',
+        description: 'Verifique seu e-mail para o link mágico de login'
       })
     } catch (error) {
       toast({
-        title: 'Error',
-        description: 'An error occurred. Please try again.'
+        title: 'Erro',
+        description: 'Ocorreu um erro. Por favor, tente novamente.'
       })
     }
   })
@@ -30,15 +30,15 @@ export function AuthForm() {
     <div className="mx-auto max-w-sm space-y-8">
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-bold">Login</h1>
-        <p className="text-gray-500 dark:text-gray-400">Enter your email below to login to your account</p>
+        <p className="text-gray-500 dark:text-gray-400">Digite seu email para efetuar o login.</p>
       </div>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <Input id="email" placeholder="email@example.com" required type="email" {...form.register('email')} />
         </div>
-        <Button className="w-full" type="submit">
-          Send Magic Link
+        <Button className="w-full" type="submit" disabled={form.formState.isSubmitting}>
+        {form.formState.isSubmitting ? "Enviando..." : "Enviar Link Mágico"}
         </Button>
       </form>
     </div>
